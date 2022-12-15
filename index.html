@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>answer.to.everything</title>
+
+    <style>
+        body {
+            background-image: url('img/Element 11.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .universe {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60px;
+        }
+
+        /*       .circle {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1500px;
+        } */
+
+        .star01 {
+            position: fixed;
+            width: 100px;
+            left: 5%;
+        }
+
+        .star02 {
+            position: fixed;
+            width: 100px;
+            top: 170px;
+            left: 20%;
+            transform: rotate(130deg);
+        }
+
+        .star03 {
+            position: fixed;
+            width: 160px;
+            top: 100px;
+            left: 80%;
+        }
+
+        .striche {
+            width: 70%;
+            position: fixed;
+            left: 20%;
+        }
+
+        .askmeanything {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            top: 490px;
+            width: 30%;
+            position: relative;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .askmeanything {
+                width: 80%;
+            }
+        }
+
+        input {
+            width: 400px;
+            background-color: #eaeaea;
+            height: 100px;
+            border-radius: 100px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: Xhan Mono;
+            font-size: 15pt;
+            color: rgb(57, 30, 133);
+            padding: 12px 20px;
+            text-align: center;
+            margin-top: 60px;
+            border-style: none;
+            border-color: white;
+            box-shadow: 0 0 30px #f4f3f0, 0 0 30px #f4f3f0, 0 0 30px #f4f3f0, 0 0 30px #f4f3f0, 0 0 30px #f4f3f0, 0 0 30px #f4f3f0, 0 0 30px #f4f3f0;
+        }
+
+        input:hover {
+            border-color: rgb(224, 224, 224);
+            box-shadow: 0px 0px 14px 14px #eaeaea;
+        }
+
+        *:focus {
+            outline: none !important
+        }
+
+        @font-face {
+            font-family: Xhan Mono;
+            src: url(img/XanhMono-Italic.ttf);
+        }
+
+        #output {
+            font-family: Xhan Mono;
+            font-size: 15pt;
+            color: white;
+            padding: 12px 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            text-shadow: rgb(255, 255, 255) 3px 0 10px;
+        }
+
+        .outputfade {
+            animation: fade 5s;
+        }
+
+        @keyframes fade {
+
+            0%,
+            100% {
+                opacity: 0
+            }
+
+            50% {
+                opacity: 1
+            }
+        }
+
+        .circle {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            margin: auto;
+            animation: circle 26s linear infinite;
+        }
+
+        @keyframes circle {
+            0% {
+                transform: rotate(0deg) translate(-405px) rotate(0deg);
+
+            }
+
+            100% {
+                transform: rotate(360deg) translate(-405px) rotate(-360deg);
+            }
+        }
+
+
+        .circlebackground {
+
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 0px;
+            z-index: -20;
+        }
+
+        .hide {
+            display: none;
+
+        }
+
+        .myDIV:hover+.hide {
+            display: block;
+            color: rgb(82, 65, 121);
+            font-family: Xhan Mono;
+            font-size: 15pt;
+            padding: 312px 20px;
+            padding-left: 400px;
+            padding-right: 400px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .myDIV:hover+.hide {
+                display: block;
+                color: rgb(82, 65, 121);
+                font-family: Xhan Mono;
+                font-size: 15pt;
+                padding: 252px 20px;
+                padding-left: 100px;
+                padding-right: 100px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="decision-button" style="display: none;"></button>
+    <!-- <img class="circle" src="img/circle.png" alt="circle"> -->
+
+    <img class="universe" src="img/universe.png" alt="universe">
+    <input type="text" id="input" class="input" type="text" placeholder="enter your question here ...">
+    <img class="striche" src="img/striche.png" alt="striche">
+
+    <img class="star01" src="img/star.png" alt="star">
+
+    <img class="star02" src="img/two_star.png" alt="star">
+    <img class="star03" src="img/three_stars.png" alt="star">
+
+    <div class="myDIV"><img class="askmeanything" src="img/ask_me_anything_02.png" alt="ask_me_anything"></div>
+    <div class="hide">glad that your path leads you to me. I am a spiritual life counsellor and will gladly answer any
+        questions you may have. Ask them in the text box and I will show you the path to enlightenment.</div>
+
+    <p id="output"></p>
+
+
+    <div><img class="circle" src="img/Element 9.png"></div>
+
+</body>
+
+
+
+<script>
+
+    const outputElement = document.getElementById("output");
+    const buttonElement = document.getElementById("decision-button");
+    const inputElement = document.getElementById("input");
+
+
+
+    let responses = [
+        {
+            text: "[you know the answer yourself!]",
+        },
+        {
+            text: "[the answer lies in the future]",
+        },
+        {
+            text: "[42]",
+        },
+        {
+            text: "[the future will guide you]",
+        },
+        {
+            text: "[ask someone else]",
+        },
+        {
+            text: "[trust your gut feeling]",
+        },
+        {
+            text: "[you ask too many questions]",
+        },
+        {
+            text: "[it depends]",
+        },
+        {
+            text: "[think about this again]",
+        },
+        {
+            text: "[you can look forward to everything that comes your way]",
+        },
+        {
+            text: "[a different way of looking at things can be helpful]",
+        },
+        {
+            text: "[prepare yourself for change]",
+        },
+        {
+            text: "[this question is itself based on false assumptions]",
+        },
+        {
+            text: "[Why do you ask?]",
+        },
+        {
+            text: "[the universse]",
+        },
+    ];
+
+
+    function generateResponse() {
+        let randomObject = responses[Math.floor(Math.random() * responses.length)];
+        console.log(randomObject);
+
+        outputElement.innerHTML = randomObject.text;
+        outputElement.style.animation = "fade 5s infinite";
+    }
+
+    function onEnter(event) {
+        console.log(event.key);
+        if (event.key === "Enter") {
+            event.preventDefault();
+            generateResponse();
+            outputElement.classList = "outputfade";
+            outputElement.style.animation = "fade 5s infinite";
+        }
+    }
+
+    buttonElement.addEventListener("click", generateResponse);
+
+
+
+    document.addEventListener('keydown', onEnter);
+
+
+
+
+</script>
+
+
+</html>
